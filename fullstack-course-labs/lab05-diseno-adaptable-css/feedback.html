@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comentarios - Lista de Compras</title>
+
+    <link rel="stylesheet" href="css/feedback.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Formulario de comentarios</h1>
+
+      <nav>
+        <a href="login.html">Inicio de sesión</a>
+        <a href="feedback.html">Comentarios</a>
+        <a href="#">Categorías</a>
+        <a href="#">Lista de compras</a>
+      </nav>
+    </header>
+
+    <main>
+      <form class="flex-container" action="#" method="POST">
+        <h2>Enviar comentario</h2>
+
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" />
+        </div>
+
+        <div class="form-group">
+          <label for="correo">Correo electrónico:</label>
+          <input type="email" id="correo" name="correo" />
+        </div>
+
+        <div class="form-group">
+          <label for="comentario">Comentario:</label>
+          <textarea id="comentario" name="comentario" rows="5"></textarea>
+        </div>
+
+        <div class="button-container">
+          <input type="submit" class="submit-button" value="Enviar" />
+          <input type="reset" class="reset-button" value="Borrar" />
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
