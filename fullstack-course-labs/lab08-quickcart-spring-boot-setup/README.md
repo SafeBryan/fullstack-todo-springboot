@@ -1,67 +1,22 @@
-# Laboratorio 08 - Configuración inicial de QuickCart con Spring Boot
-
-## Curso
-
-Desarrollo Web Full Stack - Curso 5
-
-## Módulo
-
-Módulo 2 - Desarrollo web en Java
+# Laboratorio 08 - Proyecto QuickCart con Spring MVC
 
 ## Descripción
 
-Este laboratorio consiste en configurar la estructura inicial de una aplicación web llamada QuickCart utilizando Spring Boot y Spring MVC. La aplicación representa una tienda en línea que posteriormente permitirá gestionar y mostrar productos a los clientes.
+Este laboratorio se desarrolló de manera incremental dentro de un mismo proyecto Spring Boot llamado QuickCart. A partir de una configuración inicial con Spring Initializr, se fueron agregando diferentes funcionalidades relacionadas con Spring MVC, JSP, Thymeleaf, formularios y persistencia con Spring Data JPA.
 
-La configuración inicial se realizó mediante Spring Initializr, seleccionando Maven como gestor de dependencias, Java como lenguaje de programación y Spring Web como dependencia principal para el desarrollo web.
+## Actividades realizadas
 
-## Objetivo
+- Configuración inicial del proyecto QuickCart con Spring Boot.
+- Creación del modelo `Product`.
+- Creación del controlador `ProductController`.
+- Visualización de productos mediante JSP.
+- Migración de la vista a Thymeleaf.
+- Aplicación de estilos CSS al catálogo de productos.
+- Implementación de formulario para agregar productos.
+- Integración de Spring Data JPA.
+- Configuración de MySQL mediante Docker.
+- Implementación de operaciones CRUD: listar, guardar, actualizar y eliminar productos.
 
-Configurar la estructura básica de la aplicación web QuickCart, sentando las bases para construir y visualizar un catálogo de productos utilizando Spring Boot y el patrón Modelo-Vista-Controlador.
+## Resultado
 
-## Configuración del proyecto
-
-- Project: Maven
-- Language: Java
-- Spring Boot: versión estable
-- Group: `com.quickcart`
-- Artifact: `ecommerce`
-- Name: `QuickCart`
-- Package name: `com.quickcart.ecommerce`
-- Packaging: JAR
-- Java: 21
-- Dependency: Spring Web
-
-## Conceptos revisados
-
-- Tecnologías Java Server
-- Cliente y servidor
-- HTTP request y HTTP response
-- Java Servlets
-- Java Server Pages
-- Spring Framework
-- Spring Boot
-- Servidor embebido Tomcat
-- Arquitectura MVC
-- Maven
-- Archivo `pom.xml`
-- Estructura de carpetas de un proyecto Spring Boot
-
-## Estructura principal del proyecto
-
-```text
-ecommerce/
-├── pom.xml
-└── src/
-    ├── main/
-    │   ├── java/
-    │   │   └── com/
-    │   │       └── quickcart/
-    │   │           └── ecommerce/
-    │   │               └── QuickCartApplication.java
-    │   └── resources/
-    │       ├── static/
-    │       ├── templates/
-    │       └── application.properties
-    └── test/
-        └── java/
-```
+Se construyó una aplicación web básica de catálogo de productos utilizando Spring Boot, Spring MVC, Thymeleaf, Spring Data JPA y MySQL en Docker.
