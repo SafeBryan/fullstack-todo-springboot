@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro de Producto</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="page-container">
+      <section id="productForm" class="form-card">
+        <h1>Registro de producto</h1>
+
+        <p class="description">
+          Complete la información del producto. Todos los campos serán validados
+          con JavaScript antes de enviar el formulario.
+        </p>
+
+        <form
+          action="#"
+          method="POST"
+          onsubmit="
+            submitForm();
+            return false;
+          "
+        >
+          <div class="form-group">
+            <label for="productName">Nombre del producto:</label>
+            <input type="text" id="productName" name="productName" />
+            <div id="productNameError" class="error-message"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="productCategory">Categoría del producto:</label>
+            <select id="productCategory" name="productCategory">
+              <option value="">Seleccione una categoría</option>
+              <option value="phone">Teléfono</option>
+              <option value="laptop">Laptop</option>
+              <option value="camera">Cámara</option>
+              <option value="headphones">Auriculares</option>
+              <option value="watch">Reloj inteligente</option>
+            </select>
+            <div id="productCategoryError" class="error-message"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="productID">ID del producto:</label>
+            <input type="text" id="productID" name="productID" />
+            <div id="productIDError" class="error-message"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="serialNumber">Número de serie:</label>
+            <input type="text" id="serialNumber" name="serialNumber" />
+            <div id="serialNumberError" class="error-message"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="warranty">Garantía en años:</label>
+            <input type="number" id="warranty" name="warranty" />
+            <div id="warrantyError" class="error-message"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="price">Precio:</label>
+            <input type="number" id="price" name="price" step="0.01" />
+            <div id="priceError" class="error-message"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="vendor">Vendedor:</label>
+            <input type="text" id="vendor" name="vendor" />
+            <div id="vendorError" class="error-message"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Correo electrónico:</label>
+            <input type="text" id="email" name="email" />
+            <div id="emailError" class="error-message"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="phoneNumber">Número de teléfono:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" />
+            <div id="phoneNumberError" class="error-message"></div>
+          </div>
+
+          <div class="button-container">
+            <input type="submit" value="Enviar" />
+            <input type="reset" value="Limpiar" onclick="clearErrors()" />
+          </div>
+        </form>
+      </section>
+
+      <section id="thanksMessage" class="thanks-message">
+        <h2>¡Gracias por registrar su producto!</h2>
+        <p>La información fue validada correctamente.</p>
+        <button onclick="location.reload()">Registrar otro producto</button>
+      </section>
+    </main>
+  </body>
+</html>
