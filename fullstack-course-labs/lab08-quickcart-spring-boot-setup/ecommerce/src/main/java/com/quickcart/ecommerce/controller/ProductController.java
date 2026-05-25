@@ -11,7 +11,7 @@ import java.util.List;
 @Controller
 public class ProductController {
 
-    @GetMapping({ "/", "/products" })
+    @GetMapping({"/", "/products"})
     public String getProducts(Model productModel) {
 
         List<Product> products = new ArrayList<>();
@@ -20,19 +20,22 @@ public class ProductController {
                 1,
                 "Laptop",
                 "Una laptop para trabajo, estudio y entretenimiento.",
-                500.0);
+                500.0
+        );
 
         Product smartphone = new Product(
                 2,
                 "Smartphone",
                 "Un teléfono inteligente para comunicación y uso diario.",
-                350.0);
+                350.0
+        );
 
         Product headphones = new Product(
                 3,
                 "Headphones",
                 "Auriculares para escuchar música, llamadas y reuniones.",
-                80.0);
+                80.0
+        );
 
         products.add(laptop);
         products.add(smartphone);
