@@ -1,0 +1,15 @@
+services:
+  mysql-shoppinglist:
+    image: mysql:8.4
+    container_name: mysql-shoppinglist
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: shoppinglist
+    ports:
+      - "3306:3306"
+    volumes:
+      - shoppinglist_mysql_data:/var/lib/mysql
+
+volumes:
+  shoppinglist_mysql_data:
