@@ -1,48 +1,50 @@
 package com.quickcart.ecommerce.controller;
 
 import com.quickcart.ecommerce.model.Product;
+import com.quickcart.ecommerce.service.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class ProductController {
 
-    @GetMapping({"/", "/products"})
-    public String getProducts(Model productModel) {
+        private final ProductService productService;
 
-        List<Product> products = new ArrayList<>();
+        public ProductController(ProductService productService) {
+                this.productService = productService;
+        }
 
-        Product laptop = new Product(
-                1,
-                "Laptop",
-                "Una laptop para trabajo, estudio y entretenimiento.",
-                500.0
-        );
+        @GetMapping({ "/", "/products" })
+        public String listProducts(Model model) {
+                model.addAttribute("products", productService.getAllProducts());
+                return "products";
+        }
 
-        Product smartphone = new Product(
-                2,
-                "Smartphone",
-                "Un teléfono inteligente para comunicación y uso diario.",
-                350.0
-        );
+        @GetMapping("/add")
+        public String showAddProductForm(Model model) {
+                model.addAttribute("product", new Product());
+                return "add-new-product";
+        }
 
-        Product headphones = new Product(
-                3,
-                "Headphones",
-                "Auriculares para escuchar música, llamadas y reuniones.",
-                80.0
-        );
+        @PostMapping("/saveProduct")
+        public String saveProduct(Product product) {
+                productService.saveProduct(product);
+                return "redirect:/";
+        }
 
-        products.add(laptop);
-        products.add(smartphone);
-        products.add(headphones);
+        @GetMapping("/showFormForUpdate/{id}")
+        public String showFormForUpdate(@PathVariable Integer id, Model model) {
+                Product product = productService.getProductById(id);
+                model.addAttribute("product", product);
+                return "update-product";
+        }
 
-        productModel.addAttribute("products", products);
-
-        return "products";
-    }
+        @GetMapping("/deleteProduct/{id}")
+        public String deleteProduct(@PathVariable Integer id) {
+                productService.deleteProductById(id);
+                return "redirect:/";
+        }
 }

@@ -1,0 +1,17 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: quickcart-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: quickcart_db
+      MYSQL_USER: quickcart_user
+      MYSQL_PASSWORD: quickcart_pass
+      MYSQL_ROOT_PASSWORD: root_pass
+    ports:
+      - "3307:3306"
+    volumes:
+      - quickcart_mysql_data:/var/lib/mysql
+
+volumes:
+  quickcart_mysql_data:
