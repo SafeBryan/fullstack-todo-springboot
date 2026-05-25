@@ -1,0 +1,13 @@
+package org.amazon.example.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class WelcomeController {
+
+    @GetMapping("/welcome")
+    public String getWelcomeMessage() {
+        return "¡Bienvenido a la API REST de Spring Boot!";
+    }
+}

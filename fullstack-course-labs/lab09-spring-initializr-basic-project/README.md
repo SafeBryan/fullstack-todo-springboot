@@ -76,3 +76,15 @@ example/
     └── test/
         └── java/
 ```
+
+## Actividad adicional: Controlador REST básico
+
+Como parte del laboratorio, se creó un controlador REST utilizando Spring Boot. El objetivo fue comprender cómo una aplicación puede responder a solicitudes HTTP mediante endpoints.
+
+Se creó la clase `WelcomeController` dentro del paquete `controller`, utilizando las anotaciones `@RestController` y `@GetMapping`.
+
+El endpoint implementado fue:
+
+```text
+GET /welcome
+```
